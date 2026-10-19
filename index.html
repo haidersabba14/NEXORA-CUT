@@ -3,285 +3,270 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#08060d">
-<title>NEXORA CUT — Creative Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#08070d">
+<title>NEXORA CUT — Creative Intelligence</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
-:root{
- --bg:#08060d;--panel:#100d18;--panel2:#171222;--line:#30223f;
- --purple:#a56bff;--violet:#793cff;--pink:#e0a1ff;
- --white:#f8f4ff;--muted:#9487a7;--green:#69f2c2;
-}
+:root{--bg:#08070d;--panel:#100e18;--panel2:#171321;--line:#30243f;--purple:#a66cff;--violet:#703bdf;--pink:#e1b2ff;--muted:#9488a5;--white:#f8f5ff;--green:#75efc5}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--white);font:13px Cairo,Arial,sans-serif;min-height:100vh}
+body{margin:0;background:var(--bg);color:var(--white);font:13px Cairo,Arial,sans-serif}
 button,input,select{font:inherit}
-button{color:var(--white);background:#191322;border:1px solid #382848;padding:9px 12px;border-radius:10px;cursor:pointer;transition:.2s}
-button:hover{border-color:var(--purple);background:#251834;transform:translateY(-1px)}
-button:active{transform:scale(.98)}
-.primary{background:linear-gradient(120deg,#7136e7,#b16aff);border:0;box-shadow:0 5px 24px #823dff35;font-weight:800}
-.primary:hover{background:linear-gradient(120deg,#8b4bff,#cb8aff)}
-.muted{color:var(--muted)}
-.small{font-size:10px}
-.app{max-width:1900px;margin:auto;padding:15px}
-.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 20px;background:#0b0812ed;backdrop-filter:blur(22px);border-bottom:1px solid #342242}
+button{cursor:pointer;color:var(--white);background:#191421;border:1px solid var(--line);border-radius:10px;padding:9px 12px;transition:.18s}
+button:hover{border-color:var(--purple);background:#261936}
+button:disabled{opacity:.4;cursor:not-allowed}
+.primary{background:linear-gradient(120deg,#6934d5,#aa66ff);border:0;font-weight:800;box-shadow:0 5px 22px #8c48ff26}
+.primary:hover{background:linear-gradient(120deg,#8148ee,#c38aff)}
+.muted{color:var(--muted)}.tiny{font-size:10px}
+.top{height:70px;position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 22px;background:#0a0811ed;backdrop-filter:blur(22px);border-bottom:1px solid #30233c}
 .brand{display:flex;align-items:center;gap:12px}
-.brandmark{width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#bd8aff,#6b2de2 55%,#341065);display:grid;place-items:center;font-size:23px;font-weight:900;box-shadow:0 0 30px #8a3bff40}
-.brandname{font-size:20px;font-weight:900;letter-spacing:.5px}
-.brandname span{color:var(--purple)}
-.tagline{font-size:10px;color:var(--muted);letter-spacing:2px}
-.topactions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.status{display:flex;align-items:center;gap:7px;color:var(--green);font-size:10px;padding:8px 11px;background:#69f2c20a;border:1px solid #69f2c22c;border-radius:20px}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
-.hero{position:relative;overflow:hidden;margin:16px 0 14px;padding:23px 25px;border:1px solid #4d3270;border-radius:20px;background:radial-gradient(ellipse at 80% 0%,#7032a743,transparent 40%),radial-gradient(ellipse at 0% 100%,#40216c35,transparent 40%),linear-gradient(110deg,#15101f,#0e0a15 70%);display:flex;align-items:center;justify-content:space-between;gap:20px}
-.hero:after{content:"";position:absolute;width:250px;height:250px;border:1px solid #a56bff15;border-radius:50%;left:15%;top:-180px;box-shadow:0 0 0 30px #a56bff08,0 0 0 60px #a56bff05;pointer-events:none}
-.eyebrow{color:var(--pink);font-size:10px;letter-spacing:2px;font-weight:800}
-.hero h1{font-size:clamp(25px,4vw,43px);line-height:1.25;margin:7px 0;font-weight:900}
-.hero h1 span{color:transparent;background:linear-gradient(90deg,#c9a0ff,#8b51ff,#f0b6ff);background-clip:text}
-.hero p{color:#ab9bbd;margin:0;max-width:540px;font-size:12px;line-height:2}
-.hero-art{width:135px;height:110px;flex-shrink:0;display:grid;place-items:center;font-size:63px;color:#c8a0ff;text-shadow:0 0 38px #9146ff;transform:rotate(-9deg)}
-.metrics{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 14px}
-.metric{flex:1;min-width:100px;padding:12px 14px;border:1px solid var(--line);border-radius:13px;background:linear-gradient(130deg,#171121,#100c17)}
-.metric span{display:block;color:var(--muted);font-size:10px}
-.metric strong{display:block;font-size:20px;margin-top:2px}
-.workspace{display:grid;grid-template-columns:245px minmax(0,1fr) 250px;gap:12px}
-.panel{min-width:0;border:1px solid var(--line);border-radius:15px;background:linear-gradient(155deg,#130f1c,#0e0b14);overflow:hidden;box-shadow:0 9px 28px #00000013}
-.panelhead{padding:14px 15px;display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #2a2035;background:#ffffff02;font-weight:800}
-.panelhead .label{display:flex;align-items:center;gap:9px}
-.symbol{color:var(--pink);font-size:16px}
-.body{padding:13px}
-.upload{border:1px dashed #7750a1;border-radius:12px;padding:17px 10px;text-align:center;background:radial-gradient(ellipse at center,#8b3fff14,transparent 80%);transition:.2s}
-.upload:hover{border-color:var(--pink);background:#8b3fff13}
-.uploadicon{font-size:30px;color:#bd8cff}
-.upload strong{display:block;margin:4px 0;font-size:12px}
-.upload input{width:100%;font-size:10px;margin-top:12px}
-.library{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
-.asset{padding:7px;border:1px solid #30243e;background:#15101e;border-radius:10px;cursor:pointer;min-width:0;transition:.2s}
-.asset:hover,.asset.active{border-color:#a56bff;box-shadow:0 0 16px #803bff16}
-.thumb{height:70px;display:grid;place-items:center;background:linear-gradient(140deg,#35204f,#120e1c);border-radius:6px;overflow:hidden;font-size:24px}
+.logo{width:43px;height:43px;border-radius:15px;display:grid;place-items:center;font-size:24px;font-weight:900;background:linear-gradient(140deg,#d0a0ff,#7839e5 60%,#35105f);box-shadow:0 0 28px #8e43ff44}
+.brandname{font-size:20px;font-weight:900;letter-spacing:.5px}.brandname span{color:var(--purple)}
+.subtitle{font-size:9px;letter-spacing:2px;color:var(--muted)}
+.topright{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.online{font-size:10px;color:var(--green);border:1px solid #75efc52a;padding:7px 10px;border-radius:20px}
+main{max-width:1800px;margin:auto;padding:16px}
+.welcome{position:relative;overflow:hidden;padding:25px 27px;border:1px solid #4a3268;border-radius:20px;background:radial-gradient(ellipse at 85% 5%,#883fff38,transparent 36%),radial-gradient(ellipse at 8% 100%,#4b267a29,transparent 36%),linear-gradient(120deg,#171020,#0d0a13 70%);display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:13px}
+.welcome:after{content:"✳";position:absolute;left:9%;top:-60px;font-size:210px;color:#c69aff0b;pointer-events:none}
+.kicker{color:#d5afff;font-size:10px;letter-spacing:2px;font-weight:800}
+h1{font-size:clamp(25px,4vw,42px);line-height:1.3;margin:7px 0;font-weight:900}
+h1 span{background:linear-gradient(90deg,#d8b4ff,#9854ff,#f1caff);color:transparent;background-clip:text}
+.welcome p{color:#b0a2bf;margin:0;line-height:2;font-size:12px}
+.gem{font-size:65px;color:#c49bff;text-shadow:0 0 35px #9448ff;transform:rotate(-12deg);padding:0 12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:13px}
+.stat{border:1px solid var(--line);border-radius:13px;padding:12px 15px;background:linear-gradient(130deg,#171220,#100d17)}
+.stat label{display:block;font-size:10px;color:var(--muted)}.stat strong{font-size:20px;display:block;margin-top:3px}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr) 235px;gap:12px}
+.panel{background:linear-gradient(150deg,#14101c,#0f0c15);border:1px solid var(--line);border-radius:15px;overflow:hidden;min-width:0}
+.head{padding:13px 14px;border-bottom:1px solid #2a2035;display:flex;align-items:center;justify-content:space-between;gap:8px;font-weight:800}
+.head small{font-size:9px;color:var(--muted);letter-spacing:1px}
+.body{padding:12px}
+.import{padding:16px 9px;border:1px dashed #7750a2;border-radius:12px;text-align:center;background:radial-gradient(ellipse,#9b5bff12,transparent 80%)}
+.import .ico{font-size:29px;color:#c7a0ff}.import strong{display:block;margin:4px 0}.import input{width:100%;font-size:10px;margin-top:10px}
+.library{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+.asset{padding:6px;border:1px solid #30243c;border-radius:9px;background:#15111e;cursor:pointer;min-width:0}
+.asset.active,.asset:hover{border-color:var(--purple);box-shadow:0 0 15px #9951ff18}
+.thumb{height:67px;display:grid;place-items:center;background:linear-gradient(145deg,#39234f,#15101f);border-radius:6px;font-size:24px;overflow:hidden}
 .thumb img{width:100%;height:100%;object-fit:cover}
-.assetname{font-size:10px;margin-top:7px;overflow-wrap:anywhere;line-height:1.6}
-.assetmeta{color:var(--muted);font-size:9px;margin-top:4px}
+.assetname{font-size:10px;margin-top:6px;overflow-wrap:anywhere;line-height:1.6}.assetmeta{font-size:9px;color:var(--muted)}
 .center{display:flex;flex-direction:column;gap:12px;min-width:0}
-.monitor{background:#060409}
-.monitorbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid #2b2036}
-.livebadge{font-size:9px;padding:4px 8px;border:1px solid #7346a1;color:#d4b2ff;border-radius:6px}
-.preview{aspect-ratio:16/9;min-height:210px;max-height:520px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#1c1130,#060409 72%)}
-.preview:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(#ffffff03 1px,transparent 1px),linear-gradient(90deg,#ffffff03 1px,transparent 1px);background-size:35px 35px;mask-image:linear-gradient(transparent,black,transparent)}
-#video{display:none;width:100%;height:100%;max-height:520px;object-fit:contain;position:relative;z-index:1}
-#imagePreview{display:none;max-width:100%;max-height:520px;object-fit:contain;position:relative;z-index:1}
-.placeholder{text-align:center;position:relative;z-index:1;color:#89739f}
-.playorb{margin:auto auto 10px;width:62px;height:62px;border-radius:22px;display:grid;place-items:center;background:linear-gradient(145deg,#a05aff,#5d25cb);box-shadow:0 0 50px #9a4bff4d;font-size:24px;color:white}
-.placeholder strong{display:block;font-size:14px;color:#e3d4f4}
-.placeholder span{font-size:10px;display:block;margin-top:5px}
-#overlayTitle{position:absolute;z-index:2;left:7%;right:7%;top:44%;text-align:center;font-size:clamp(20px,4vw,39px);font-weight:900;color:white;text-shadow:0 2px 12px #000,0 0 22px #000;pointer-events:none;overflow-wrap:anywhere}
-.transport{display:flex;align-items:center;justify-content:center;gap:9px;padding:13px;flex-wrap:wrap;background:#0c0911;border-top:1px solid #261d31}
-.round{width:39px;height:39px;border-radius:13px;font-size:14px}
-.time{font-variant-numeric:tabular-nums;color:#c1b1d2;font-size:11px}
-.quicktools{padding:12px;display:flex;gap:8px;flex-wrap:wrap}
-.quicktools button{flex:1}
+.monitor{background:#06050a}
+.monitorbar{padding:11px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2b2036}
+.tag{font-size:9px;padding:4px 8px;border:1px solid #7547a7;color:#d9b8ff;border-radius:6px}
+.preview{position:relative;aspect-ratio:16/9;min-height:200px;max-height:510px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at center,#241238,#07050a 73%)}
+.preview:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px);background-size:35px 35px}
+#video{display:none;position:relative;z-index:1;width:100%;height:100%;max-height:510px;object-fit:contain}
+#picture{display:none;position:relative;z-index:1;max-width:100%;max-height:510px;object-fit:contain}
+#titleOverlay{position:absolute;z-index:2;left:6%;right:6%;top:44%;text-align:center;font-size:clamp(20px,4vw,40px);font-weight:900;text-shadow:0 2px 12px #000,0 0 25px #000;pointer-events:none;overflow-wrap:anywhere}
+.emptyPreview{text-align:center;position:relative;z-index:1;color:#b6a0ce}
+.playicon{width:63px;height:63px;border-radius:22px;display:grid;place-items:center;margin:0 auto 11px;background:linear-gradient(145deg,#bb84ff,#6b2fd0);font-size:25px;box-shadow:0 0 40px #9045ff45}
+.emptyPreview strong{display:block;font-size:14px}.emptyPreview span{font-size:10px;display:block;margin-top:5px;color:var(--muted)}
+.controls{padding:12px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;border-top:1px solid #251b2e;background:#0c0911}
+.round{width:39px;height:39px;border-radius:13px;padding:5px;font-size:15px}
+.clock{font-size:11px;color:#cbb8df;font-variant-numeric:tabular-nums}
+.quick{display:flex;gap:8px;flex-wrap:wrap;padding:12px}.quick button{flex:1}
 .inspector .body{display:flex;flex-direction:column;gap:15px}
-.field label{display:flex;justify-content:space-between;gap:8px;color:#c6b6d8;font-size:11px;margin-bottom:7px}
+.field label{display:flex;justify-content:space-between;gap:5px;margin-bottom:7px;font-size:11px;color:#c8b9d9}
 input[type=range]{width:100%;accent-color:var(--purple)}
-input[type=text],input[type=number],select{width:100%;background:#0b0811;color:white;border:1px solid #392847;border-radius:8px;padding:10px;outline:none}
+input[type=text],input[type=number],select{width:100%;padding:10px;background:#0b0811;color:white;border:1px solid #3a2a49;border-radius:8px;outline:none}
 input:focus,select:focus{border-color:var(--purple)}
-select option{background:#15101e}
-.pillrow{display:flex;gap:5px;flex-wrap:wrap}
-.pillrow button{flex:1;font-size:10px;padding:7px 5px}
+select option{background:#171020}
 .timeline{margin-top:13px}
-.timelinebar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 15px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.timelineactions{display:flex;gap:6px;flex-wrap:wrap}
-.ruler{display:flex;justify-content:space-between;padding:10px 14px 4px;color:#766b86;font-size:9px}
-.trackrow{display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px;align-items:center;padding:6px 12px}
-.tracklabel{font-size:10px;color:#bba7d4}
-.track{min-height:49px;border:1px solid #292034;border-radius:8px;background:repeating-linear-gradient(90deg,#0b0810 0,#0b0810 49px,#15101c 50px);padding:5px;display:flex;gap:6px;overflow-x:auto}
-.clip{min-width:115px;max-width:260px;flex:1;border-radius:7px;padding:6px 9px;background:linear-gradient(110deg,#6732a3,#482474);border:1px solid #a16be2;font-size:10px;cursor:pointer;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;align-self:stretch}
-.clip.selected{outline:2px solid #e0c4ff;box-shadow:0 0 15px #a56bff50}
-.clip.audio{background:linear-gradient(110deg,#145b52,#183b43);border-color:#42c9a8}
-.clip.textclip{background:linear-gradient(110deg,#724b20,#4e351c);border-color:#dca74d}
-.empty{color:#62576f;font-size:10px;padding:11px}
-.foot{padding:13px;border-top:1px solid #292034;color:#82768f;font-size:10px;line-height:1.9}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#21152f;border:1px solid #9b5cff;padding:12px 18px;border-radius:12px;z-index:30;display:none;max-width:90%;box-shadow:0 10px 35px #0009;text-align:center}
-@media(max-width:1050px){.workspace{grid-template-columns:215px minmax(0,1fr)}.inspector{grid-column:1/-1}.inspector .body{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:650px){.topbar{padding:11px;align-items:flex-start}.brandmark{width:36px;height:36px}.brandname{font-size:16px}.tagline{font-size:8px}.topactions{max-width:55%;justify-content:flex-end}.topactions button{padding:7px;font-size:10px}.status{display:none}.app{padding:8px}.hero{padding:17px;margin-top:10px}.hero-art{width:55px;font-size:39px}.hero p{font-size:10px}.metrics{gap:6px}.metric{min-width:70px;padding:9px}.metric strong{font-size:16px}.metric span{font-size:9px}.workspace{grid-template-columns:1fr}.center{grid-row:1}.library-panel{grid-row:2}.inspector{grid-column:auto;grid-row:3}.inspector .body{grid-template-columns:1fr 1fr}.preview{min-height:180px}.trackrow{grid-template-columns:63px minmax(0,1fr);gap:5px;padding:5px}.tracklabel{font-size:9px}.timelinebar{align-items:flex-start}.quicktools button{font-size:10px}.body{padding:10px}}
+.timelinehead{padding:13px 15px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.timelinebuttons{display:flex;gap:6px;flex-wrap:wrap}
+.ruler{display:flex;justify-content:space-between;padding:10px 13px 3px;color:#776a87;font-size:9px}
+.trackrow{display:grid;grid-template-columns:82px minmax(0,1fr);gap:8px;align-items:center;padding:6px 11px}
+.tracklabel{font-size:10px;color:#c0acd5}
+.track{min-height:48px;padding:5px;display:flex;gap:6px;overflow-x:auto;border:1px solid #2a2035;border-radius:8px;background:repeating-linear-gradient(90deg,#0b0810 0,#0b0810 49px,#17101e 50px)}
+.clip{min-width:112px;max-width:260px;flex:1;align-self:stretch;padding:6px 9px;background:linear-gradient(110deg,#703ab1,#43216f);border:1px solid #a16bdf;border-radius:7px;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.clip.selected{outline:2px solid #e5cfff;box-shadow:0 0 15px #a56bff44}
+.clip.audio{background:linear-gradient(110deg,#14594f,#193d42);border-color:#42c8a7}
+.clip.text{background:linear-gradient(110deg,#704b21,#49331b);border-color:#e0b259}
+.nothing{font-size:10px;color:#64586e;padding:10px}
+.foot{border-top:1px solid #292034;padding:12px 15px;color:#8e829b;font-size:10px;line-height:1.9}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:none;z-index:30;max-width:90%;padding:12px 18px;border-radius:12px;border:1px solid #a56bff;background:#20142f;box-shadow:0 10px 35px #0009;text-align:center}
+@media(max-width:1050px){.layout{grid-template-columns:210px minmax(0,1fr)}.inspector{grid-column:1/-1}.inspector .body{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.top{height:auto;padding:10px}.logo{width:35px;height:35px}.brandname{font-size:15px}.subtitle{font-size:7px;letter-spacing:1px}.topright{max-width:55%;justify-content:flex-end}.topright button{padding:7px;font-size:10px}.online{display:none}main{padding:8px}.welcome{padding:16px;margin-top:4px}.welcome p{font-size:10px}.gem{font-size:37px;padding:0}.stats{gap:6px}.stat{min-width:0;padding:9px}.stat label{font-size:9px}.stat strong{font-size:15px}.layout{grid-template-columns:1fr}.center{grid-row:1}.libraryPanel{grid-row:2}.inspector{grid-column:auto;grid-row:3}.inspector .body{grid-template-columns:1fr 1fr}.preview{min-height:175px}.trackrow{grid-template-columns:60px minmax(0,1fr);gap:5px;padding:5px}.tracklabel{font-size:9px}.timelinehead{align-items:flex-start}.quick button{font-size:10px;padding:8px 5px}}
 </style>
 </head>
 <body>
-<header class="topbar">
+<header class="top">
  <div class="brand">
-  <div class="brandmark">N</div>
-  <div><div class="brandname">NEXORA <span>CUT</span></div><div class="tagline">CREATIVE STUDIO · 01</div></div>
+  <div class="logo">N</div>
+  <div><div class="brandname">NEXORA <span>CUT</span></div><div class="subtitle">CREATIVE INTELLIGENCE STUDIO</div></div>
  </div>
- <div class="topactions">
-  <div class="status"><i class="dot"></i> المحرر جاهز</div>
+ <div class="topright">
+  <span class="online">● المحرر جاهز</span>
   <button onclick="newProject()">مشروع جديد</button>
-  <button onclick="saveProject()">حفظ ↗</button>
-  <button class="primary" onclick="exportVideo()">تصدير الفيديو</button>
+  <button onclick="saveProject()">حفظ المشروع</button>
+  <button class="primary" onclick="exportVideo()">تصدير ↗</button>
  </div>
 </header>
 
-<main class="app">
- <section class="hero">
-  <div>
-   <div class="eyebrow">✦ YOUR CREATIVE UNIVERSE</div>
-   <h1>حوّل فكرتك إلى <span>تحفة بصرية.</span></h1>
-   <p>مساحة عمل إبداعية تجمع وسائطك وأدوات التحرير في تجربة واحدة، أينما كنت.</p>
+<main>
+<section class="welcome">
+ <div><div class="kicker">✦ CREATE WITHOUT LIMITS</div><h1>كل لقطة لها <span>قصة.</span></h1><p>استوديوك الإبداعي لتحويل الوسائط إلى تجربة بصرية، بتفاصيل مصممة لصنّاع المحتوى.</p></div>
+ <div class="gem">✧</div>
+</section>
+
+<section class="stats">
+ <div class="stat"><label>ملفات الوسائط</label><strong id="assetCount">00</strong></div>
+ <div class="stat"><label>مقاطع المشروع</label><strong id="clipCount">00</strong></div>
+ <div class="stat"><label>مساحة العمل</label><strong style="font-size:14px;color:var(--purple)">CREATIVE</strong></div>
+ <div class="stat"><label>حالة المحرر</label><strong style="font-size:14px;color:var(--green)">جاهز</strong></div>
+</section>
+
+<section class="layout">
+ <section class="panel libraryPanel">
+  <div class="head"><span>▦ مكتبة الوسائط</span><small>MEDIA</small></div>
+  <div class="body">
+   <div class="import"><div class="ico">⇧</div><strong>استورد ملفاتك</strong><div class="muted tiny">فيديو · صور · صوت</div><input id="files" type="file" accept="video/*,image/*,audio/*" multiple></div>
+   <div class="library" id="library"></div>
+   <p class="muted tiny" style="line-height:1.9">تتم معاينة الملفات محليًا على جهازك.</p>
   </div>
-  <div class="hero-art">✧</div>
  </section>
 
- <section class="metrics">
-  <div class="metric"><span>ملفات الوسائط</span><strong id="assetCount">00</strong></div>
-  <div class="metric"><span>مقاطع الخط الزمني</span><strong id="clipCount">00</strong></div>
-  <div class="metric"><span>حالة المشروع</span><strong style="font-size:14px;color:var(--green)">جاهز للتحرير</strong></div>
-  <div class="metric"><span>منصة العمل</span><strong style="font-size:14px;color:var(--pink)">NEXORA Studio</strong></div>
- </section>
-
- <section class="workspace">
-  <section class="panel library-panel">
-   <div class="panelhead"><div class="label"><span class="symbol">▦</span> مكتبة الوسائط</div><span class="muted small">MEDIA</span></div>
-   <div class="body">
-    <div class="upload">
-     <div class="uploadicon">⇧</div><strong>استورد إبداعك</strong>
-     <div class="muted small">فيديوهات · صور · ملفات صوت</div>
-     <input id="fileInput" type="file" accept="video/*,image/*,audio/*" multiple>
-    </div>
-    <div class="library" id="library"></div>
-    <p class="muted small" style="line-height:1.9">ملفاتك تُعالج محليًا داخل المتصفح. لا تُرفع إلى خادم.</p>
+ <section class="center">
+  <div class="panel monitor">
+   <div class="monitorbar"><b>◉ شاشة المعاينة</b><span class="tag">LIVE PREVIEW</span></div>
+   <div class="preview" id="preview">
+    <div class="emptyPreview" id="emptyPreview"><div class="playicon">▶</div><strong>مساحتك الإبداعية</strong><span>استورد ملفًا لبدء التحرير</span></div>
+    <video id="video" playsinline></video><img id="picture" alt="معاينة الصورة"><div id="titleOverlay"></div>
    </div>
-  </section>
-
-  <section class="center">
-   <div class="panel monitor">
-    <div class="monitorbar"><span>◉ <b>شاشة العرض</b></span><span class="livebadge">LIVE PREVIEW</span></div>
-    <div class="preview" id="preview">
-     <div class="placeholder" id="placeholder"><div class="playorb">▶</div><strong>مساحتك الإبداعية</strong><span>استورد ملفًا لبدء التجربة</span></div>
-     <video id="video" playsinline></video>
-     <img id="imagePreview" alt="معاينة الصورة">
-     <div id="overlayTitle"></div>
-    </div>
-    <div class="transport">
-     <button class="round" onclick="restartVideo()" title="البداية">⏮</button>
-     <button class="round primary" id="playBtn" onclick="togglePlay()" title="تشغيل">▶</button>
-     <button class="round" onclick="skip(5)" title="تقديم">⏭</button>
-     <span class="time" id="clock">00:00 / 00:00</span>
-    </div>
+   <div class="controls">
+    <button class="round" onclick="restart()">⏮</button>
+    <button class="round primary" id="play" onclick="togglePlay()">▶</button>
+    <button class="round" onclick="skip(5)">⏭</button>
+    <span class="clock" id="clock">00:00 / 00:00</span>
    </div>
-   <div class="panel">
-    <div class="panelhead"><div class="label"><span class="symbol">✦</span> أدوات التحرير</div></div>
-    <div class="quicktools">
-     <button onclick="addToTimeline()">＋ إضافة للمسار</button>
-     <button onclick="addTextClip()">T إضافة عنوان</button>
-     <button onclick="removeSelectedClip()">⌫ حذف المقطع</button>
-    </div>
-   </div>
-  </section>
-
-  <section class="panel inspector">
-   <div class="panelhead"><div class="label"><span class="symbol">◈</span> لوحة الخصائص</div><span class="muted small">PRO</span></div>
-   <div class="body">
-    <div class="field"><label for="titleInput">العنوان النصي</label><input id="titleInput" type="text" placeholder="اكتب عنوانًا سينمائيًا"></div>
-    <div class="field"><label for="brightness">السطوع <span id="bVal">100%</span></label><input id="brightness" type="range" min="40" max="180" value="100"></div>
-    <div class="field"><label for="contrast">التباين <span id="cVal">100%</span></label><input id="contrast" type="range" min="40" max="180" value="100"></div>
-    <div class="field"><label for="saturation">التشبع <span id="sVal">100%</span></label><input id="saturation" type="range" min="0" max="200" value="100"></div>
-    <div class="field"><label for="trimStart">بداية القص (ث)</label><input id="trimStart" type="number" min="0" value="0" step=".1"></div>
-    <div class="field"><label for="trimEnd">نهاية القص (ث)</label><input id="trimEnd" type="number" min="0" value="0" step=".1"><button style="width:100%;margin-top:7px" onclick="applyTrim()">تطبيق القص</button></div>
-    <div class="field"><label for="aspect">نسبة العرض</label><select id="aspect"><option value="16/9">16:9 سينمائي</option><option value="9/16">9:16 عمودي</option><option value="1/1">1:1 مربع</option><option value="4/3">4:3 كلاسيكي</option></select></div>
-    <div class="field"><label>معلومات المقطع</label><div class="muted small" id="selectedInfo">اختر ملفًا من المكتبة.</div></div>
-   </div>
-  </section>
- </section>
-
- <section class="panel timeline">
-  <div class="timelinebar">
-   <div><b>الخط الزمني</b> <span class="muted small"> / MULTITRACK EDITOR</span></div>
-   <div class="timelineactions"><button onclick="addToTimeline()">＋ مقطع</button><button onclick="addTextClip()">＋ نص</button><button onclick="removeSelectedClip()">حذف المحدد</button></div>
   </div>
-  <div class="ruler"><span>00:00</span><span>00:15</span><span>00:30</span><span>00:45</span><span>01:00</span></div>
-  <div class="trackrow"><div class="tracklabel">▰ فيديو</div><div class="track" id="videoTrack"><span class="empty">أضف فيديو أو صورة للمسار</span></div></div>
-  <div class="trackrow"><div class="tracklabel">♫ صوت</div><div class="track" id="audioTrack"><span class="empty">المسار الصوتي</span></div></div>
-  <div class="trackrow"><div class="tracklabel">T عناوين</div><div class="track" id="textTrack"><span class="empty">مسار النصوص والعناوين</span></div></div>
-  <div class="foot">NEXORA CUT · CREATIVE STUDIO<br>الحفظ الحالي يخزن بيانات المشروع والمسارات في ملف JSON، وليس ملفات الفيديو نفسها. تصدير WebM تجريبي للفيديو المحدد؛ دمج جميع المسارات يحتاج محرك ترميز إضافيًا.</div>
+  <div class="panel">
+   <div class="head"><span>✦ أدوات سريعة</span><small>TOOLS</small></div>
+   <div class="quick"><button onclick="addClip()">＋ إضافة للمسار</button><button onclick="addTitle()">T إضافة عنوان</button><button onclick="deleteClip()">⌫ حذف المحدد</button></div>
+  </div>
  </section>
+
+ <section class="panel inspector">
+  <div class="head"><span>◈ خصائص المقطع</span><small>INSPECTOR</small></div>
+  <div class="body">
+   <div class="field"><label for="title">عنوان الفيديو</label><input id="title" type="text" placeholder="اكتب عنوانك هنا"></div>
+   <div class="field"><label for="brightness">السطوع <span id="bv">100%</span></label><input id="brightness" type="range" min="40" max="180" value="100"></div>
+   <div class="field"><label for="contrast">التباين <span id="cv">100%</span></label><input id="contrast" type="range" min="40" max="180" value="100"></div>
+   <div class="field"><label for="saturation">التشبع <span id="sv">100%</span></label><input id="saturation" type="range" min="0" max="200" value="100"></div>
+   <div class="field"><label for="start">بداية القص بالثواني</label><input id="start" type="number" min="0" step=".1" value="0"></div>
+   <div class="field"><label for="end">نهاية القص بالثواني</label><input id="end" type="number" min="0" step=".1" value="0"><button style="width:100%;margin-top:7px" onclick="applyTrim()">تطبيق القص</button></div>
+   <div class="field"><label for="ratio">نسبة العرض</label><select id="ratio"><option value="16/9">16:9 سينمائي</option><option value="9/16">9:16 عمودي</option><option value="1/1">1:1 مربع</option><option value="4/3">4:3 كلاسيكي</option></select></div>
+   <div class="field"><label>المقطع المحدد</label><div class="muted tiny" id="info">اختر ملفًا من المكتبة.</div></div>
+  </div>
+ </section>
+</section>
+
+<section class="panel timeline">
+ <div class="timelinehead"><div><b>الخط الزمني</b> <span class="muted tiny">/ MULTITRACK WORKSPACE</span></div><div class="timelinebuttons"><button onclick="addClip()">＋ مقطع</button><button onclick="addTitle()">＋ نص</button><button onclick="deleteClip()">حذف المحدد</button></div></div>
+ <div class="ruler"><span>00:00</span><span>00:15</span><span>00:30</span><span>00:45</span><span>01:00</span></div>
+ <div class="trackrow"><div class="tracklabel">▰ فيديو</div><div class="track" id="videoTrack"><span class="nothing">أضف فيديو أو صورة</span></div></div>
+ <div class="trackrow"><div class="tracklabel">♫ صوت</div><div class="track" id="audioTrack"><span class="nothing">المسار الصوتي</span></div></div>
+ <div class="trackrow"><div class="tracklabel">T نصوص</div><div class="track" id="textTrack"><span class="nothing">مسار العناوين</span></div></div>
+ <div class="foot">NEXORA CUT · الإصدار التجريبي<br>يعمل الموقع كواجهة تحرير محلية. ملف JSON يحفظ إعدادات المشروع والمسارات، ولا يضمّن ملفات الوسائط الأصلية. تصدير WebM تجريبي للفيديو المحدد، وليس دمجًا كاملًا للمسارات.</div>
+</section>
 </main>
 <div class="toast" id="toast"></div>
 
 <script>
-const $=id=>document.getElementById(id),video=$('video'),imagePreview=$('imagePreview');
-let assets=[],clips=[],selectedAsset=null,selectedClip=null,nextId=1,toastTimer;
-function notify(s){const t=$('toast');t.textContent=s;t.style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.style.display='none',2600)}
-function fmt(s){if(!Number.isFinite(s)||s<0)s=0;return String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0')}
+const $=id=>document.getElementById(id),video=$('video'),picture=$('picture');
+let assets=[],clips=[],selected=null,selectedClip=null,uid=1,toastTimer;
+function toast(s){const e=$('toast');e.textContent=s;e.style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.style.display='none',2600)}
 function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function vid(a){return a.type.startsWith('video/')}function img(a){return a.type.startsWith('image/')}function aud(a){return a.type.startsWith('audio/')}
-$('fileInput').addEventListener('change',e=>{
- for(const file of e.target.files){if(!/^(video|image|audio)\//.test(file.type))continue;assets.push({id:nextId++,file,name:file.name,type:file.type,url:URL.createObjectURL(file),duration:0})}
- renderLibrary();if(assets.length&&!selectedAsset)selectAsset(assets[0].id);e.target.value='';
+function time(s){s=Number.isFinite(s)&&s>0?s:0;return String(Math.floor(s/60)).padStart(2,'0')+':'+String(Math.floor(s%60)).padStart(2,'0')}
+const isV=a=>a.type.startsWith('video/'),isI=a=>a.type.startsWith('image/'),isA=a=>a.type.startsWith('audio/');
+$('files').addEventListener('change',e=>{
+ for(const f of e.target.files)if(/^(video|image|audio)\//.test(f.type))assets.push({id:uid++,file:f,name:f.name,type:f.type,url:URL.createObjectURL(f),duration:0});
+ renderLibrary();if(assets.length&&!selected)chooseAsset(assets[0].id);e.target.value='';
 });
 function renderLibrary(){
  $('assetCount').textContent=String(assets.length).padStart(2,'0');
- $('library').innerHTML=assets.map(a=>`<div class="asset ${selectedAsset?.id===a.id?'active':''}" onclick="selectAsset(${a.id})"><div class="thumb">${img(a)?`<img src="${a.url}" alt="">`:vid(a)?'🎬':'♫'}</div><div class="assetname">${safe(a.name)}</div><div class="assetmeta">${(a.file.size/1048576).toFixed(1)} MB</div></div>`).join('');
+ $('library').innerHTML=assets.map(a=>`<div class="asset ${selected?.id===a.id?'active':''}" onclick="chooseAsset(${a.id})"><div class="thumb">${isI(a)?`<img src="${a.url}" alt="">`:isV(a)?'🎬':'♫'}</div><div class="assetname">${safe(a.name)}</div><div class="assetmeta">${(a.file.size/1048576).toFixed(1)} MB</div></div>`).join('');
 }
-function selectAsset(id){
- const a=assets.find(x=>x.id===id);if(!a)return;selectedAsset=a;selectedClip=null;
- renderLibrary();renderTimeline();$('selectedInfo').textContent=a.name;$('placeholder').style.display='none';
- video.pause();video.style.display='none';imagePreview.style.display='none';
+function chooseAsset(id){
+ selected=assets.find(a=>a.id===id);if(!selected)return;selectedClip=null;renderLibrary();renderTimeline();
+ $('info').textContent=selected.name;$('emptyPreview').style.display='none';video.pause();video.style.display='none';picture.style.display='none';
  const old=$('audioPlayer');if(old)old.remove();
- if(vid(a)){video.src=a.url;video.style.display='block';video.load();video.onloadedmetadata=()=>{a.duration=video.duration||0;$('trimStart').value=0;$('trimEnd').value=a.duration.toFixed(1);updateBounds();updateClock()}}
- else if(img(a)){imagePreview.src=a.url;imagePreview.style.display='block';$('trimStart').value=0;$('trimEnd').value=5;updateBounds()}
- else{video.removeAttribute('src');video.load();const au=document.createElement('audio');au.id='audioPlayer';au.controls=true;au.src=a.url;au.style.cssText='width:100%;margin-top:8px';$('preview').after(au)}
+ if(isV(selected)){video.src=selected.url;video.style.display='block';video.load();video.onloadedmetadata=()=>{selected.duration=video.duration||0;$('start').value=0;$('end').value=selected.duration.toFixed(1);updateTime()}}
+ else if(isI(selected)){picture.src=selected.url;picture.style.display='block';$('start').value=0;$('end').value=5}
+ else{video.removeAttribute('src');video.load();const au=document.createElement('audio');au.id='audioPlayer';au.controls=true;au.src=selected.url;au.style.cssText='width:100%;margin-top:8px';$('preview').after(au)}
 }
-function updateBounds(){const d=Number.isFinite(video.duration)?video.duration:0;$('trimStart').max=d;$('trimEnd').max=d}
-function updateClock(){$('clock').textContent=fmt(video.currentTime)+' / '+fmt(video.duration)}
-video.addEventListener('timeupdate',updateClock);
-video.addEventListener('play',()=>$('playBtn').textContent='Ⅱ');
-video.addEventListener('pause',()=>$('playBtn').textContent='▶');
-function togglePlay(){if(video.style.display==='none'||!video.src){notify('اختر فيديو أولًا');return}if(video.paused)video.play().catch(()=>notify('تعذر تشغيل الفيديو'));else video.pause()}
-function restartVideo(){if(video.src){video.currentTime=0;video.play().catch(()=>{})}}
+function updateTime(){$('clock').textContent=time(video.currentTime)+' / '+time(video.duration)}
+video.addEventListener('timeupdate',updateTime);video.addEventListener('play',()=>$('play').textContent='Ⅱ');video.addEventListener('pause',()=>$('play').textContent='▶');
+function togglePlay(){if(!video.src||video.style.display==='none'){toast('حدد فيديو أولًا');return}video.paused?video.play().catch(()=>toast('تعذر تشغيل الفيديو')):video.pause()}
+function restart(){if(video.src){video.currentTime=0;video.play().catch(()=>{})}}
 function skip(n){if(video.src)video.currentTime=Math.min(video.duration||0,video.currentTime+n)}
-$('titleInput').addEventListener('input',()=>$('overlayTitle').textContent=$('titleInput').value);
-['brightness','contrast','saturation'].forEach((id,i)=>$(id).addEventListener('input',()=>{
- const v=$(id).value;$(['bVal','cVal','sVal'][i]).textContent=v+'%';
+$('title').addEventListener('input',()=>$('titleOverlay').textContent=$('title').value);
+function filters(){
  const f=`brightness(${$('brightness').value}%) contrast(${$('contrast').value}%) saturate(${$('saturation').value}%)`;
- video.style.filter=f;imagePreview.style.filter=f;
-}));
-$('aspect').addEventListener('change',()=>$('preview').style.aspectRatio=$('aspect').value);
-function addToTimeline(){
- const a=selectedAsset;if(!a){notify('استورد ملفًا وحدده أولًا');return}
- const start=Math.max(0,Number($('trimStart').value)||0),raw=Number($('trimEnd').value);
- const end=raw>start?raw:(a.duration||5);
- clips.push({id:nextId++,assetId:a.id,type:aud(a)?'audio':'video',name:a.name,start,end,duration:Math.max(.1,end-start)});
- selectedClip=clips[clips.length-1];renderTimeline();notify('تمت إضافة المقطع');
+ video.style.filter=f;picture.style.filter=f;
+ [['brightness','bv'],['contrast','cv'],['saturation','sv']].forEach(([a,b])=>$(b).textContent=$(a).value+'%');
 }
-function addTextClip(){const name=$('titleInput').value.trim();if(!name){notify('اكتب العنوان في لوحة الخصائص أولًا');return}clips.push({id:nextId++,type:'text',name,start:0,end:5,duration:5});selectedClip=clips[clips.length-1];renderTimeline();notify('تمت إضافة العنوان')}
+['brightness','contrast','saturation'].forEach(id=>$(id).addEventListener('input',filters));
+$('ratio').addEventListener('change',()=>$('preview').style.aspectRatio=$('ratio').value);
+function addClip(){
+ if(!selected){toast('استورد ملفًا وحدده أولًا');return}
+ const s=Math.max(0,Number($('start').value)||0),e=Number($('end').value);
+ const end=e>s?e:(selected.duration||5);
+ clips.push({id:uid++,assetId:selected.id,type:isA(selected)?'audio':'video',name:selected.name,start:s,end,duration:Math.max(.1,end-s)});
+ selectedClip=clips[clips.length-1];renderTimeline();toast('تمت إضافة المقطع إلى المسار');
+}
+function addTitle(){
+ const name=$('title').value.trim();if(!name){toast('اكتب عنوانًا أولًا');return}
+ clips.push({id:uid++,type:'text',name,start:0,end:5,duration:5});selectedClip=clips[clips.length-1];renderTimeline();toast('تمت إضافة العنوان');
+}
 function renderTimeline(){
  for(const [type,id] of [['video','videoTrack'],['audio','audioTrack'],['text','textTrack']]){
- const list=clips.filter(c=>c.type===type),el=$(id);
- el.innerHTML=list.length?list.map(c=>`<div class="clip ${type==='audio'?'audio':type==='text'?'textclip':''} ${selectedClip?.id===c.id?'selected':''}" onclick="chooseClip(${c.id})" title="${safe(c.name)}">${safe(c.name)} · ${c.duration.toFixed(1)}ث</div>`).join(''):'<span class="empty">لا توجد مقاطع</span>';
+ const list=clips.filter(c=>c.type===type);
+ $(id).innerHTML=list.length?list.map(c=>`<div class="clip ${type==='audio'?'audio':type==='text'?'text':''} ${selectedClip?.id===c.id?'selected':''}" onclick="pickClip(${c.id})">${safe(c.name)} · ${c.duration.toFixed(1)}ث</div>`).join(''):'<span class="nothing">لا توجد مقاطع</span>';
  }
  $('clipCount').textContent=String(clips.length).padStart(2,'0');
 }
-function chooseClip(id){selectedClip=clips.find(c=>c.id===id);if(!selectedClip)return;if(selectedClip.assetId){const a=assets.find(x=>x.id===selectedClip.assetId);if(a)selectAsset(a.id);selectedClip=clips.find(c=>c.id===id);$('trimStart').value=selectedClip.start;$('trimEnd').value=selectedClip.end}else $('titleInput').value=selectedClip.name;renderTimeline()}
-function applyTrim(){if(!selectedAsset){notify('اختر مقطعًا أولًا');return}let s=Math.max(0,Number($('trimStart').value)||0),e=Number($('trimEnd').value);if(!Number.isFinite(e)||e<=s){notify('وقت النهاية يجب أن يكون بعد البداية');return}if(selectedAsset.duration&&e>selectedAsset.duration)e=selectedAsset.duration;if(video.src&&vid(selectedAsset))video.currentTime=s;if(selectedClip){selectedClip.start=s;selectedClip.end=e;selectedClip.duration=e-s;renderTimeline()}notify('تم تطبيق حدود القص')}
-function removeSelectedClip(){if(!selectedClip){notify('حدد مقطعًا من الخط الزمني');return}clips=clips.filter(c=>c.id!==selectedClip.id);selectedClip=null;renderTimeline();notify('تم حذف المقطع')}
-function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),2000)}
-function saveProject(){const data={app:'NEXORA CUT',version:2,title:$('titleInput').value,aspect:$('aspect').value,filters:{brightness:$('brightness').value,contrast:$('contrast').value,saturation:$('saturation').value},assets:assets.map(a=>({id:a.id,name:a.name,type:a.type,size:a.file.size})),clips};download(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),'nexora-cut-project.json');notify('تم حفظ بيانات المشروع')}
-function newProject(){if(!confirm('بدء مشروع جديد ومسح الوسائط الحالية؟'))return;video.pause();assets.forEach(a=>URL.revokeObjectURL(a.url));assets=[];clips=[];selectedAsset=null;selectedClip=null;video.removeAttribute('src');video.load();video.style.display='none';imagePreview.style.display='none';$('placeholder').style.display='block';$('titleInput').value='';$('overlayTitle').textContent='';const au=$('audioPlayer');if(au)au.remove();renderLibrary();renderTimeline();notify('مشروع جديد جاهز')}
+function pickClip(id){
+ selectedClip=clips.find(c=>c.id===id);if(!selectedClip)return;
+ if(selectedClip.assetId){chooseAsset(selectedClip.assetId);selectedClip=clips.find(c=>c.id===id);$('start').value=selectedClip.start;$('end').value=selectedClip.end}
+ else $('title').value=selectedClip.name;
+ renderTimeline();
+}
+function applyTrim(){
+ if(!selected){toast('حدد ملفًا أولًا');return}
+ const s=Math.max(0,Number($('start').value)||0);let e=Number($('end').value);
+ if(!Number.isFinite(e)||e<=s){toast('النهاية يجب أن تكون بعد البداية');return}
+ if(selected.duration&&e>selected.duration)e=selected.duration;
+ if(isV(selected)&&video.src)video.currentTime=s;
+ if(selectedClip){selectedClip.start=s;selectedClip.end=e;selectedClip.duration=e-s;renderTimeline()}
+ toast('تم تطبيق حدود القص');
+}
+function deleteClip(){if(!selectedClip){toast('حدد مقطعًا من الخط الزمني');return}clips=clips.filter(c=>c.id!==selectedClip.id);selectedClip=null;renderTimeline();toast('تم حذف المقطع')}
+function download(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)}
+function saveProject(){
+ const data={app:'NEXORA CUT',version:3,title:$('title').value,ratio:$('ratio').value,filters:{brightness:$('brightness').value,contrast:$('contrast').value,saturation:$('saturation').value},assets:assets.map(a=>({id:a.id,name:a.name,type:a.type,size:a.file.size})),clips};
+ download(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),'nexora-cut-project.json');toast('تم حفظ إعدادات المشروع');
+}
+function newProject(){
+ if(!confirm('بدء مشروع جديد؟ سيتم إزالة الوسائط الحالية.'))return;
+ video.pause();assets.forEach(a=>URL.revokeObjectURL(a.url));assets=[];clips=[];selected=null;selectedClip=null;video.removeAttribute('src');video.load();video.style.display='none';picture.style.display='none';$('emptyPreview').style.display='block';$('title').value='';$('titleOverlay').textContent='';const au=$('audioPlayer');if(au)au.remove();renderLibrary();renderTimeline();toast('مشروع جديد جاهز');
+}
 async function exportVideo(){
- const a=selectedAsset;if(!a||!vid(a)){notify('حدد فيديو أولًا');return}
- if(!video.videoWidth||!video.videoHeight){notify('انتظر تحميل الفيديو');return}
- if(!window.MediaRecorder||!HTMLCanvasElement.prototype.captureStream){notify('التصدير غير مدعوم في هذا المتصفح');return}
+ if(!selected||!isV(selected)||!video.videoWidth){toast('حدد فيديو وانتظر تحميله');return}
+ if(!window.MediaRecorder||!HTMLCanvasElement.prototype.captureStream){toast('التصدير غير مدعوم في هذا المتصفح');return}
  const canvas=document.createElement('canvas');canvas.width=Math.min(video.videoWidth,1920);canvas.height=Math.round(canvas.width*video.videoHeight/video.videoWidth);
  const ctx=canvas.getContext('2d'),stream=canvas.captureStream(30);let rec;
- try{const mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp9')?'video/webm;codecs=vp9':'video/webm';rec=new MediaRecorder(stream,{mimeType:mime})}catch(e){notify('تعذر تشغيل التصدير');return}
- const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};rec.onerror=()=>notify('حدث خطأ في التصدير');
- rec.onstop=()=>{stream.getTracks().forEach(t=>t.stop());if(chunks.length)download(new Blob(chunks,{type:'video/webm'}),'nexora-cut.webm');notify('اكتمل تصدير الفيديو المحدد')};
- const s=Math.max(0,Number($('trimStart').value)||0);let end=Number($('trimEnd').value);if(!Number.isFinite(end)||end<=s)end=video.duration;end=Math.min(end,video.duration);if(end<=s){notify('راجع أوقات القص');return}
+ try{rec=new MediaRecorder(stream,{mimeType:MediaRecorder.isTypeSupported('video/webm;codecs=vp9')?'video/webm;codecs=vp9':'video/webm'})}catch(e){toast('تعذر تشغيل التصدير');return}
+ const chunks=[];rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data)};
+ rec.onstop=()=>{stream.getTracks().forEach(t=>t.stop());if(chunks.length)download(new Blob(chunks,{type:'video/webm'}),'nexora-cut.webm');toast('انتهى التصدير التجريبي')};
+ const s=Math.max(0,Number($('start').value)||0);let end=Number($('end').value);if(!Number.isFinite(end)||end<=s)end=video.duration;end=Math.min(end,video.duration);
+ if(end<=s){toast('راجع أوقات القص');return}
  video.pause();video.currentTime=s;await new Promise(resolve=>{if(Math.abs(video.currentTime-s)<.05&&video.readyState>=2)resolve();else video.addEventListener('seeked',resolve,{once:true})});
- function draw(){if(rec.state!=='recording')return;ctx.filter=`brightness(${$('brightness').value}%) contrast(${$('contrast').value}%) saturate(${$('saturation').value}%)`;ctx.drawImage(video,0,0,canvas.width,canvas.height);ctx.filter='none';const t=$('titleInput').value;if(t){const fs=Math.max(22,canvas.width*.045);ctx.font=`bold ${fs}px sans-serif`;ctx.textAlign='center';ctx.lineWidth=fs*.08;ctx.strokeStyle='#000';ctx.fillStyle='#fff';ctx.strokeText(t,canvas.width/2,canvas.height*.75,canvas.width*.88);ctx.fillText(t,canvas.width/2,canvas.height*.75,canvas.width*.88)}if(video.currentTime>=end||video.ended){video.pause();rec.stop();return}requestAnimationFrame(draw)}
- try{rec.start();video.play();draw();notify('جارٍ تصدير معاينة الفيديو')}catch(e){if(rec.state==='recording')rec.stop();notify('تعذر بدء التصدير')}
+ function draw(){if(rec.state!=='recording')return;ctx.filter=`brightness(${$('brightness').value}%) contrast(${$('contrast').value}%) saturate(${$('saturation').value}%)`;ctx.drawImage(video,0,0,canvas.width,canvas.height);ctx.filter='none';const t=$('title').value;if(t){const fs=Math.max(22,canvas.width*.045);ctx.font=`bold ${fs}px sans-serif`;ctx.textAlign='center';ctx.lineWidth=fs*.08;ctx.strokeStyle='#000';ctx.fillStyle='#fff';ctx.strokeText(t,canvas.width/2,canvas.height*.75,canvas.width*.88);ctx.fillText(t,canvas.width/2,canvas.height*.75,canvas.width*.88)}if(video.currentTime>=end||video.ended){video.pause();rec.stop();return}requestAnimationFrame(draw)}
+ try{rec.start();video.play();draw();toast('جارٍ تصدير الفيديو المحدد')}catch(e){if(rec.state==='recording')rec.stop();toast('تعذر بدء التصدير')}
 }
 window.addEventListener('beforeunload',()=>assets.forEach(a=>URL.revokeObjectURL(a.url)));
-renderLibrary();renderTimeline();
+renderLibrary();renderTimeline();filters();
 </script>
 </body>
 </html>
